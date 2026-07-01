@@ -29,6 +29,7 @@ export const WORKVYB = {
 
 export const ENQUIRY_FORM = {
   name: (variant) => `${variant}-form-name-input`,
+  email: (variant) => `${variant}-form-email-input`,
   mobile: (variant) => `${variant}-form-mobile-input`,
   company: (variant) => `${variant}-form-company-input`,
   roles: (variant) => `${variant}-form-roles-input`,

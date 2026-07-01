@@ -17,9 +17,9 @@ const Hero = () => {
       <div className="pointer-events-none absolute right-0 top-40 h-[300px] w-[400px] rounded-full bg-violet-100/50 blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-8">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-10">
           {/* Left: Copy */}
-          <div>
+          <div className="lg:pt-4">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -103,30 +103,30 @@ const Hero = () => {
                 </a>
               </Button>
             </motion.div>
+
+            {/* Compact dashboard visual - shown on desktop only, tucked under the CTAs */}
+            <div className="mt-12 hidden lg:block">
+              <HeroVisual />
+            </div>
           </div>
 
-          {/* Right: Visual */}
-          <div className="hidden lg:block">
-            <HeroVisual />
-          </div>
+          {/* Right: Hero Enquiry Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8"
+          >
+            <h2 className="font-heading text-2xl font-bold text-slate-900">Tell us who you are hiring for</h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Share your hiring requirement and Workvyb will help you shortlist relevant candidates faster
+              using AI-powered sourcing and screening.
+            </p>
+            <div className="mt-6">
+              <EnquiryForm variant="hero" />
+            </div>
+          </motion.div>
         </div>
-
-        {/* Hero Enquiry Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mx-auto mt-14 max-w-xl rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8 lg:mx-0 lg:mt-16 lg:max-w-md"
-        >
-          <h2 className="font-heading text-2xl font-bold text-slate-900">Tell us who you are hiring for</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Share your hiring requirement and Workvyb will help you shortlist relevant candidates faster
-            using AI-powered sourcing and screening.
-          </p>
-          <div className="mt-6">
-            <EnquiryForm variant="hero" />
-          </div>
-        </motion.div>
       </div>
     </section>
   );

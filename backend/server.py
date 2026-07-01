@@ -46,6 +46,7 @@ class StatusCheckCreate(BaseModel):
 
 class LeadEnquiry(BaseModel):
     name: str
+    email: str
     mobile: str
     company: str
     roles: str
@@ -92,6 +93,9 @@ async def notify_new_lead(lead: LeadEnquiry):
         <strong>Name:</strong> {lead.name}
       </td></tr>
       <tr><td style="padding:8px 0;color:#374151;">
+        <strong>Email:</strong> {lead.email}
+      </td></tr>
+      <tr><td style="padding:8px 0;color:#374151;">
         <strong>Mobile Number:</strong> {lead.mobile}
       </td></tr>
       <tr><td style="padding:8px 0;color:#374151;">
@@ -108,6 +112,7 @@ async def notify_new_lead(lead: LeadEnquiry):
     params = {
         "from": SENDER_EMAIL,
         "to": [LEAD_NOTIFICATION_EMAIL],
+        "reply_to": lead.email,
         "subject": f"New Workvyb Hiring Enquiry from {lead.company}",
         "html": html_content,
     }

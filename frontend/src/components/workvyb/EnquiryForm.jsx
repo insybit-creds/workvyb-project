@@ -14,6 +14,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const enquirySchema = z.object({
   name: z.string().trim().min(2, 'Please enter your name'),
+  email: z.string().trim().email('Enter a valid email address'),
   mobile: z
     .string()
     .trim()
@@ -97,6 +98,25 @@ const EnquiryForm = ({ variant = 'hero' }) => {
         {errors.name && (
           <p data-testid={ENQUIRY_FORM.error(variant, 'name')} className="text-xs text-rose-600">
             {errors.name.message}
+          </p>
+        )}
+      </div>
+
+      <div className="space-y-1.5">
+        <Label htmlFor={`${variant}-email`} className="text-sm font-medium text-slate-700">
+          Email ID
+        </Label>
+        <Input
+          id={`${variant}-email`}
+          type="email"
+          placeholder="you@company.com"
+          data-testid={ENQUIRY_FORM.email(variant)}
+          className="h-11 rounded-lg border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus-visible:border-blue-500 focus-visible:ring-1 focus-visible:ring-blue-500"
+          {...register('email')}
+        />
+        {errors.email && (
+          <p data-testid={ENQUIRY_FORM.error(variant, 'email')} className="text-xs text-rose-600">
+            {errors.email.message}
           </p>
         )}
       </div>
