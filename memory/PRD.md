@@ -52,6 +52,16 @@ by the user (see original full spec for exact section copy/content — implement
    blue→violet gradient banner for visual contrast. Hero dashboard visual kept as a dark card
    for premium "tech mockup on light page" contrast.
 
+### Change Log (user feedback round 2) — Email Lead Notifications
+- Added `POST /api/leads/notify` FastAPI endpoint using **Resend** to send a transactional
+  email whenever the enquiry form is submitted (Name, Mobile, Company, Roles). **No database
+  used** per user's request (low expected volume, ~2 leads/day).
+- Recipient: `saurabh@insybit.com`. Sender: `onboarding@resend.dev` (Resend sandbox).
+- `EnquiryForm.jsx` now calls this real endpoint via axios instead of a simulated submission;
+  shows success state + toast on success, destructive toast on failure.
+- Credentials stored in `/app/backend/.env` (`RESEND_API_KEY`, `SENDER_EMAIL`,
+  `LEAD_NOTIFICATION_EMAIL`) — see `/app/memory/test_credentials.md`.
+
 ### Testing
 - Full E2E frontend test pass completed (test_reports/iteration_1.json): 100% pass rate.
   Verified section order, both enquiry forms (validation + success + toast), header nav +
@@ -60,14 +70,12 @@ by the user (see original full spec for exact section copy/content — implement
   Added missing `data-testid` on individual Recent Closures cards per minor suggestion.
 
 ## Prioritized Backlog / Next Steps
-- **P0**: Connect enquiry form (`EnquiryForm.jsx`) to a real backend endpoint + MongoDB
-  collection so leads are persisted and viewable (currently simulated client-side only).
-- **P1**: Add CRM/email/WhatsApp Business API notification when a new lead is submitted.
+- **P1**: Add WhatsApp Business API notification when a new lead is submitted (in addition to email).
 - **P1**: Add basic analytics (form submissions, WhatsApp click tracking) for conversion
   measurement.
 - **P2**: Add real client logos / testimonials once available (currently generic per user
   request).
-- **P2**: Add a simple admin view to see submitted leads once backend is connected.
+- **P2**: If lead volume grows beyond a few/day, revisit adding MongoDB persistence + admin view.
 
 ## Key Files
 - `/app/frontend/src/pages/LandingPage.jsx` — section assembly/order

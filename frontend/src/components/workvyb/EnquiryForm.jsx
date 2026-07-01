@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import axios from 'axios';
 import { CheckCircle2, Loader2, Send } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { ENQUIRY_FORM } from '@/constants/testIds/workvyb';
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const enquirySchema = z.object({
   name: z.string().trim().min(2, 'Please enter your name'),
@@ -24,8 +27,8 @@ const enquirySchema = z.object({
  * `variant` controls the data-testid prefix so the same component can be
  * rendered inside the hero section and again near the bottom of the page.
  *
- * NOTE: This form is front-end only for now. Wire `onSubmit` to a real
- * backend / CRM endpoint later (see App.js API constant).
+ * Submits to POST /api/leads/notify which sends an email notification to the
+ * Workvyb team (no database persistence — low lead volume, email is enough).
  */
 const EnquiryForm = ({ variant = 'hero' }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -38,15 +41,22 @@ const EnquiryForm = ({ variant = 'hero' }) => {
   } = useForm({ resolver: zodResolver(enquirySchema) });
 
   const onSubmit = async (data) => {
-    // Simulated submission — replace with a real API call once backend/CRM is connected.
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    console.log('Workvyb hiring enquiry submitted:', data);
-    setSubmitted(true);
-    reset();
-    toast({
-      title: 'Enquiry received',
-      description: 'Workvyb will contact you shortly regarding your hiring requirement.',
-    });
+    try {
+      await axios.post(`${API}/leads/notify`, data);
+      setSubmitted(true);
+      reset();
+      toast({
+        title: 'Enquiry received',
+        description: 'Workvyb will contact you shortly regarding your hiring requirement.',
+      });
+    } catch (error) {
+      console.error('Failed to submit hiring enquiry:', error);
+      toast({
+        variant: 'destructive',
+        title: 'Something went wrong',
+        description: 'Could not submit your requirement right now. Please try again or reach us on WhatsApp.',
+      });
+    }
   };
 
   if (submitted) {
