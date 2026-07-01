@@ -4,7 +4,7 @@ import { fadeInUp, staggerContainer, scrollRevealProps } from '@/lib/motion';
 
 const RolesWeHire = () => {
   return (
-    <section id="roles-we-hire" className="bg-slate-50 py-20 sm:py-28">
+    <section id="roles-we-hire" className="bg-slate-50 py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp} className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">Roles We Hire For</p>
@@ -20,7 +20,7 @@ const RolesWeHire = () => {
         <motion.div
           {...scrollRevealProps}
           variants={staggerContainer(0.08)}
-          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {ROLE_CATEGORIES.map((category) => (
             <motion.div

@@ -11,7 +11,7 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-violet-600 py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-violet-600 py-14 sm:py-20">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-white/10 blur-[120px]" />
       <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp}>

@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-white pb-16 pt-14 sm:pb-24 sm:pt-20">
+    <section id="hero" className="relative overflow-hidden bg-white pb-10 pt-6 sm:pb-14 sm:pt-8">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-blue-100/60 blur-[120px]" />
       <div className="pointer-events-none absolute right-0 top-40 h-[300px] w-[400px] rounded-full bg-violet-100/50 blur-[100px]" />
 

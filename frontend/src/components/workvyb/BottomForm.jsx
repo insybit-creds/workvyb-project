@@ -4,7 +4,7 @@ import { fadeInUp, scrollRevealProps } from '@/lib/motion';
 
 const BottomForm = () => {
   return (
-    <section id="contact" className="bg-slate-50 py-20 sm:py-28">
+    <section id="contact" className="bg-slate-50 py-14 sm:py-20">
       <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
         <motion.div
           {...scrollRevealProps}

@@ -200,13 +200,6 @@ export const RECENT_CLOSURES = [
     onboarding: 'Onboarded in 8 weeks',
   },
   {
-    role: 'Accountant',
-    companyType: 'Financial Consulting Company',
-    location: 'Ghaziabad',
-    shortlist: '10 days',
-    onboarding: 'Onboarded in 3 weeks',
-  },
-  {
     role: 'GTM Consultant',
     companyType: 'B2B SaaS Company',
     location: 'Remote',

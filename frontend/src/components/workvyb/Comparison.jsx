@@ -11,7 +11,7 @@ const Comparison = () => {
   };
 
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp} className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">Comparison</p>
@@ -23,7 +23,7 @@ const Comparison = () => {
         <motion.div
           {...scrollRevealProps}
           variants={fadeInUp}
-          className="mt-14 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+          className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
         >
           <div className="grid grid-cols-2">
             <div className="border-b border-r border-slate-200 bg-slate-50 p-4 text-center sm:p-5">

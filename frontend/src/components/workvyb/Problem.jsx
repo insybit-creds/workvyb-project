@@ -4,7 +4,7 @@ import { fadeInUp, staggerContainer, scrollRevealProps } from '@/lib/motion';
 
 const Problem = () => {
   return (
-    <section className="bg-slate-50 py-20 sm:py-28">
+    <section className="bg-slate-50 py-14 sm:py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp} className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">The Problem</p>
@@ -16,7 +16,7 @@ const Problem = () => {
         <motion.div
           {...scrollRevealProps}
           variants={staggerContainer(0.08)}
-          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2"
+          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2"
         >
           {PROBLEM_POINTS.map((point) => (
             <motion.div

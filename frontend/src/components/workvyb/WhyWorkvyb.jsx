@@ -11,7 +11,7 @@ const WhyWorkvyb = () => {
   };
 
   return (
-    <section id="why-workvyb" className="bg-white py-20 sm:py-28">
+    <section id="why-workvyb" className="bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp} className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-600">Why Workvyb</p>
@@ -23,7 +23,7 @@ const WhyWorkvyb = () => {
         <motion.div
           {...scrollRevealProps}
           variants={staggerContainer(0.06)}
-          className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
         >
           {WHY_WORKVYB_POINTS.map((point) => (
             <motion.div
@@ -42,7 +42,7 @@ const WhyWorkvyb = () => {
         <motion.div
           {...scrollRevealProps}
           variants={fadeInUp}
-          className="mx-auto mt-16 flex max-w-2xl flex-col items-center gap-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50 to-violet-50 p-8 text-center"
+          className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50 to-violet-50 p-8 text-center"
         >
           <h3 className="font-heading text-xl font-bold text-slate-900 sm:text-2xl">
             Need to close an urgent role?
