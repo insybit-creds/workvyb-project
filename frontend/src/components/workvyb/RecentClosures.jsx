@@ -30,9 +30,10 @@ const RecentClosures = () => {
           variants={staggerContainer(0.06)}
           className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {RECENT_CLOSURES.map((closure) => (
+          {RECENT_CLOSURES.map((closure, i) => (
             <motion.div
               key={closure.role}
+              data-testid={`recent-closure-card-${i}`}
               variants={fadeInUp}
               whileHover={{ y: -4 }}
               className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-lg"
