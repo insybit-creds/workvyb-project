@@ -1,0 +1,140 @@
+{
+  "project_name": "Workvyb - AI Recruitment Landing Page",
+  "theme_strategy": {
+    "theme": "dark",
+    "archetype": "Archetype 5 (Luxury Tech) + Archetype 4 (High-Contrast SaaS)",
+    "description": "A premium, dark-mode SaaS aesthetic combining deep navy/charcoal backgrounds with glowing electric blue and violet accents. The feel is 'God-Tier AI SaaS'—trustworthy, technical, and high-converting."
+  },
+  "typography": {
+    "headings": {
+      "family": "'Cabinet Grotesk', sans-serif",
+      "import_url": "https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,900&display=swap",
+      "styling": "tracking-tight, high-contrast, premium tech feel. Avoid pure bold; use black/extra-bold for hero headers."
+    },
+    "body": {
+      "family": "'Manrope', sans-serif",
+      "import_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap",
+      "styling": "leading-relaxed, tracking-normal, sterile and clean."
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "body": "text-base sm:text-lg text-slate-400",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-blue-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "bg-[#030712]",
+      "surface": "bg-[#0f172a]",
+      "glass": "bg-slate-900/50 backdrop-blur-xl"
+    },
+    "borders": {
+      "default": "border-slate-800",
+      "subtle": "border-white/5",
+      "highlight": "border-blue-500/50"
+    },
+    "text": {
+      "primary": "text-white",
+      "secondary": "text-slate-400",
+      "muted": "text-slate-500"
+    },
+    "accents": {
+      "primary": "blue-500",
+      "secondary": "violet-500",
+      "gradient_text": "bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500",
+      "glow": "shadow-[0_0_30px_rgba(59,130,246,0.3)]"
+    }
+  },
+  "surfaces_and_components": {
+    "glass_cards": "Use 'Optical Clarity' glassmorphism: bg-slate-900/40 backdrop-blur-2xl border border-white/10 shadow-2xl. Never muddy.",
+    "buttons": {
+      "primary": "bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]",
+      "secondary": "bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-all"
+    },
+    "forms": "Use highly customized Shadcn inputs. bg-slate-950 border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500. Add subtle inner shadow. Inputs must feel premium, not default HTML.",
+    "bento_grid": "Use asymmetrical layouts for features (e.g., col-span-2 vs col-span-1). Avoid perfect squares everywhere.",
+    "icons": "Use lucide-react. Keep stroke width consistent (1.5 or 2)."
+  },
+  "animations": {
+    "library": "framer-motion",
+    "patterns": {
+      "scroll_reveal": "initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, ease: 'easeOut' }}",
+      "stagger_children": "Use transition={{ staggerChildren: 0.1 }} for grids and lists.",
+      "hover_card": "whileHover={{ y: -5 }} transition={{ duration: 0.2 }}",
+      "infinite_marquee": "Use react-fast-marquee for slow-moving abstract tech/partner text bands."
+    }
+  },
+  "media_assets": {
+    "instruction": "CRITICAL: The main agent MUST use these exact URLs in the React components. Do not use placeholders.",
+    "avatars": [
+      { "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc4Mjg2Mzk0MXww&ixlib=rb-4.1.0&q=85", "role": "candidate_female_1" },
+      { "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc4Mjg2Mzk0MXww&ixlib=rb-4.1.0&q=85", "role": "candidate_male_1" },
+      { "url": "https://images.unsplash.com/photo-1607503873903-c5e95f80d7b9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc4Mjg2Mzk0MXww&ixlib=rb-4.1.0&q=85", "role": "candidate_female_2" },
+      { "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc4Mjg2Mzk0MXww&ixlib=rb-4.1.0&q=85", "role": "candidate_male_2" }
+    ],
+    "backgrounds": [
+      { "url": "https://images.pexels.com/photos/30018101/pexels-photo-30018101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "role": "hero_abstract_texture", "usage": "Use as a very low opacity (10-15%) absolute background behind the hero section with mix-blend-overlay." },
+      { "url": "https://images.pexels.com/photos/273682/pexels-photo-273682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", "role": "metrics_trust_bg", "usage": "Use behind the metrics/trust section with a heavy dark gradient overlay (bg-slate-950/80)." }
+    ]
+  },
+  "page_sections_strategy": {
+    "header": {
+      "layout": "Sticky, glassmorphism (backdrop-blur-md bg-[#030712]/80), z-50.",
+      "logo": "Text-based wordmark 'Workvyb' using Cabinet Grotesk, bold, white, with a blue dot or gradient accent.",
+      "cta": "WhatsApp button with Lucide MessageCircle icon, green or brand blue."
+    },
+    "hero": {
+      "layout": "Split grid (lg:grid-cols-2). Left: Copy + Lead Form. Right: Dashboard Visual.",
+      "content_left": "H1 with gradient text highlighting 'AI-enabled'. Subheadline. Trust badges (e.g., 'Trusted by 50+ Startups'). The lead form MUST be embedded here, inside a premium glass card. Form fields: Name, Mobile, Company, Role. Submit button.",
+      "content_right_visual": "DO NOT USE STOCK IMAGES. Build a customized React/Tailwind composition showing an 'AI Recruitment Pipeline'. Stacked overlapping cards (e.g., 'Candidate Match: 98%', avatars from media_assets, 'Interview Stage' chips) using framer-motion to float slightly."
+    },
+    "problem": {
+      "vibe": "High contrast, Swiss Brutalist typography. Large text 'Hiring is broken.' Minimalist.",
+      "layout": "Centered, narrow max-width. Staggered fade-in text."
+    },
+    "solution_benefits": {
+      "layout": "Bento Grid pattern. 3-4 cards.",
+      "style": "Dark cards with subtle 1px border. On hover, apply a radial gradient glow behind the mouse (tracing beam effect) or just a subtle lift with blue shadow."
+    },
+    "roles_we_hire": {
+      "layout": "6 cards. Use 'Grid Borders' pattern (border-collapse style, where internal borders are visible but outer edges blend).",
+      "content": "Sales, Marketing, Tech, Finance, Product, GTM. Include a clean list of 3-4 sub-roles per category."
+    },
+    "why_workvyb": {
+      "layout": "Alternating text/image or modular blocks. Focus on AI matching, speed, quality.",
+      "cta": "Include a prominent CTA button to scroll back to the form."
+    },
+    "recent_closures": {
+      "layout": "Horizontal scrollable flex container (hide scrollbar) or a masonry grid. 7 cards.",
+      "card_style": "Terminal/Tech vibe. Include role name, generic company type (e.g., 'Series B SaaS'), timeline ('Closed in 14 days'). Use pill/badge components heavily here."
+    },
+    "process": {
+      "layout": "Timeline. Vertical line on mobile, horizontal on desktop. Use glowing dots for nodes.",
+      "steps": "4 steps: Discovery, AI Sourcing & Match, Interview & Filter, Offer & Onboard."
+    },
+    "comparison_table": {
+      "layout": "Standard table layout but styled like a pricing tier. 'Traditional Agencies' vs 'Workvyb'.",
+      "visuals": "Muted gray text/X marks for Traditional. Bright white text/blue glowing checkmarks for Workvyb. Background of Workvyb column should be slightly lighter (bg-slate-900)."
+    },
+    "metrics_trust": {
+      "layout": "3-4 large stats. Background uses 'metrics_trust_bg' from media_assets with a dark overlay.",
+      "typography": "Massive numbers (text-6xl or 7xl) with gradient fill."
+    },
+    "faq": {
+      "layout": "Standard Shadcn Accordion, customized to have a dark aesthetic (border-b border-slate-800, white text)."
+    },
+    "footer": {
+      "layout": "Generous padding (py-20). Huge CTA 'Ready to build your dream team?'",
+      "contact": "Clearly display email contact@workvyb.com and WhatsApp 8010545225."
+    },
+    "floating_whatsapp": {
+      "position": "fixed bottom-6 right-6 z-50",
+      "style": "Green background, bounce animation on load, tooltip 'Chat with us'. Link: https://wa.me/918010545225?text=Hi%20Workvyb"
+    }
+  },
+  "testing": {
+    "instructions": "All interactive elements (buttons, form inputs, form submit, accordion triggers, navigation links) MUST include a 'data-testid' attribute using kebab-case. Examples: 'data-testid=\"hero-form-name\"', 'data-testid=\"submit-lead-button\"', 'data-testid=\"whatsapp-floating-cta\"'."
+  }
+}
