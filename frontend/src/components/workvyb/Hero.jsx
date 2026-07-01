@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import HeroVisual from './HeroVisual';
 import EnquiryForm from './EnquiryForm';
 import { HERO_BADGES, WHATSAPP_LINK } from '@/data/workvybData';
 import { WORKVYB } from '@/constants/testIds/workvyb';
@@ -17,9 +16,9 @@ const Hero = () => {
       <div className="pointer-events-none absolute right-0 top-40 h-[300px] w-[400px] rounded-full bg-violet-100/50 blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-10">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-10">
           {/* Left: Copy */}
-          <div className="lg:pt-4">
+          <div>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -103,11 +102,6 @@ const Hero = () => {
                 </a>
               </Button>
             </motion.div>
-
-            {/* Compact dashboard visual - shown on desktop only, tucked under the CTAs */}
-            <div className="mt-12 hidden lg:block">
-              <HeroVisual />
-            </div>
           </div>
 
           {/* Right: Hero Enquiry Form */}

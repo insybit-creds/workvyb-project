@@ -259,6 +259,27 @@ export const METRICS = [
   { value: 'AI + Human', label: 'Better Candidate Filtering' },
 ];
 
+export const TESTIMONIALS = [
+  {
+    quote:
+      'Workvyb understood our requirement quickly and helped us shortlist relevant candidates for a B2B Product Marketing role within 7 days. The quality of profiles was strong, and we were able to close the position in 3 weeks.',
+    author: 'Founder',
+    context: 'AI Cybersecurity Startup, Gurgaon',
+  },
+  {
+    quote:
+      'We needed a Marketing Manager who could work in a fast-paced D2C environment. Workvyb shared a focused shortlist, reduced our screening effort, and helped us onboard the right candidate within 3 weeks.',
+    author: 'Founder',
+    context: 'D2C Startup, Gurgaon',
+  },
+  {
+    quote:
+      'Hiring for a Marketing Automation role requires both technical and campaign understanding. Workvyb helped us find relevant candidates and supported the process from shortlist to closure.',
+    author: 'VP, Digital Transformation',
+    context: 'Marketing Agency',
+  },
+];
+
 export const FAQS = [
   {
     question: 'What kind of companies does Workvyb work with?',

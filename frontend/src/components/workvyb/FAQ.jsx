@@ -5,7 +5,7 @@ import { fadeInUp, scrollRevealProps } from '@/lib/motion';
 
 const FAQ = () => {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-slate-50 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp} className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">FAQ</p>

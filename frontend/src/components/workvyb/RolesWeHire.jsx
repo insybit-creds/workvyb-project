@@ -4,7 +4,7 @@ import { fadeInUp, staggerContainer, scrollRevealProps } from '@/lib/motion';
 
 const RolesWeHire = () => {
   return (
-    <section id="roles-we-hire" className="bg-white py-20 sm:py-28">
+    <section id="roles-we-hire" className="bg-slate-50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div {...scrollRevealProps} variants={fadeInUp} className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">Roles We Hire For</p>

@@ -1,6 +1,7 @@
 import Header from '@/components/workvyb/Header';
 import Hero from '@/components/workvyb/Hero';
 import RecentClosures from '@/components/workvyb/RecentClosures';
+import Testimonials from '@/components/workvyb/Testimonials';
 import Problem from '@/components/workvyb/Problem';
 import Solution from '@/components/workvyb/Solution';
 import RolesWeHire from '@/components/workvyb/RolesWeHire';
@@ -20,6 +21,7 @@ const LandingPage = () => {
       <main>
         <Hero />
         <RecentClosures />
+        <Testimonials />
         <Problem />
         <Solution />
         <RolesWeHire />
