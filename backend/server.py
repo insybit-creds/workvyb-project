@@ -7,7 +7,7 @@ import asyncio
 import logging
 import resend
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List
 import uuid
 from datetime import datetime, timezone
@@ -46,7 +46,7 @@ class StatusCheckCreate(BaseModel):
 
 class LeadEnquiry(BaseModel):
     name: str
-    email: str
+    email: EmailStr
     mobile: str
     company: str
     roles: str

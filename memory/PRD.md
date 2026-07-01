@@ -54,13 +54,23 @@ by the user (see original full spec for exact section copy/content — implement
 
 ### Change Log (user feedback round 2) — Email Lead Notifications
 - Added `POST /api/leads/notify` FastAPI endpoint using **Resend** to send a transactional
-  email whenever the enquiry form is submitted (Name, Mobile, Company, Roles). **No database
-  used** per user's request (low expected volume, ~2 leads/day).
-- Recipient: `saurabh@insybit.com`. Sender: `onboarding@resend.dev` (Resend sandbox).
+  email whenever the enquiry form is submitted (Name, Email, Mobile, Company, Roles). **No
+  database used** per user's request (low expected volume, ~2 leads/day).
+- Recipient: `saurabh@insybit.com`. Sender: `onboarding@resend.dev` (Resend sandbox). Reply-To
+  is set to the lead's own email so the team can reply directly.
 - `EnquiryForm.jsx` now calls this real endpoint via axios instead of a simulated submission;
   shows success state + toast on success, destructive toast on failure.
 - Credentials stored in `/app/backend/.env` (`RESEND_API_KEY`, `SENDER_EMAIL`,
   `LEAD_NOTIFICATION_EMAIL`) — see `/app/memory/test_credentials.md`.
+
+### Change Log (user feedback round 3) — Email field + Hero layout redesign
+- Added an **Email ID** field to the enquiry form (Name, Email, Mobile, Company, Roles) with
+  zod + backend `EmailStr` validation (returns clean 422 for malformed email).
+- Redesigned Hero section desktop layout: previously the form sat in a narrow block below the
+  grid, leaving large empty space on the right side. Now a 2-column grid — left: copy + CTAs +
+  compact AI dashboard visual; right: enquiry form card filling the column height. Mobile/tablet
+  (<1024px) stacks to a single column as before (visual hidden, form directly below copy).
+- Full E2E test pass (iteration_2.json): 100% frontend, 100% backend (5/5 pytest cases).
 
 ### Testing
 - Full E2E frontend test pass completed (test_reports/iteration_1.json): 100% pass rate.
