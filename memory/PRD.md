@@ -72,6 +72,26 @@ by the user (see original full spec for exact section copy/content — implement
   (<1024px) stacks to a single column as before (visual hidden, form directly below copy).
 - Full E2E test pass (iteration_2.json): 100% frontend, 100% backend (5/5 pytest cases).
 
+### Change Log (user feedback round 4) — Removed hero visual, added testimonials
+- Removed the AI dashboard/funnel visual (`HeroVisual.jsx` deleted) entirely from Hero per user
+  feedback that it made the first fold "worse" — Hero is now a clean 2-column grid: left = copy
+  only, right = enquiry form card.
+- Added new **Testimonials** section (3 real client quotes) placed right after Recent Closures,
+  before Problem section. Background alternation (white/slate-50) flipped across subsequent
+  sections to keep visual rhythm consistent.
+- iteration_2 testing flagged a possible hero form submission issue; main agent re-verified via
+  direct screenshot test — form + toast work correctly (was a test-script timing false alarm).
+
+### Change Log (user feedback round 5) — Spacing & symmetry cleanup
+- Removed the "Accountant" card from Recent Closures — now exactly 6 cards (symmetric 2x3 grid
+  desktop): Product Manager, B2B Product Marketing Manager, Marketing Manager, Junior Fullstack
+  Developer, Marketing Automation Specialist, GTM Consultant.
+- Reduced Hero top padding (was `pt-14 sm:pt-20`, now `pt-6 sm:pt-8`) to remove excess space
+  between sticky header and headline / unnecessary scroll.
+- Reduced vertical padding across all 11 sections site-wide (`py-20 sm:py-28` → `py-14 sm:py-20`)
+  plus internal heading-to-content margins (`mt-14/16` → `mt-10`) for a tighter, less scrolly page.
+- Full test pass (iteration_3.json): 100%, no regressions.
+
 ### Testing
 - Full E2E frontend test pass completed (test_reports/iteration_1.json): 100% pass rate.
   Verified section order, both enquiry forms (validation + success + toast), header nav +
